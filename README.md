@@ -1,4 +1,4 @@
-# Digger
+# DiggerKC85
 ## Port of an old <a href="http://lanale.de/">KC85-game</a> for <a href="https://gamebuino.com/gamebuino-meta">Gamebuino-META</a><br>
 (fork from the orig. programmed <a href="https://github.com/scmar/DiggerMETA">scmar/DiggerMETA</a>)
 <br><br>
