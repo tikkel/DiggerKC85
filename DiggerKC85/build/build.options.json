@@ -1,0 +1,11 @@
+{
+  "additionalFiles": "..,..,..,..,..,..",
+  "builtInLibrariesFolders": "/home/makko/arduino-1.8.10/libraries",
+  "customBuildProperties": "build.path=/home/makko/Arduino/DiggerKC85/DiggerKC85/build,build.warn_data_percentage=75,runtime.tools.bossac.path=/home/makko/.arduino15/packages/arduino/tools/bossac/1.7.0-arduino3,runtime.tools.bossac-1.7.0-arduino3.path=/home/makko/.arduino15/packages/arduino/tools/bossac/1.7.0-arduino3,runtime.tools.openocd.path=/home/makko/.arduino15/packages/arduino/tools/openocd/0.10.0-arduino7,runtime.tools.openocd-0.10.0-arduino7.path=/home/makko/.arduino15/packages/arduino/tools/openocd/0.10.0-arduino7,runtime.tools.CMSIS.path=/home/makko/.arduino15/packages/arduino/tools/CMSIS/4.5.0,runtime.tools.CMSIS-4.5.0.path=/home/makko/.arduino15/packages/arduino/tools/CMSIS/4.5.0,runtime.tools.arm-none-eabi-gcc.path=/home/makko/.arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4,runtime.tools.arm-none-eabi-gcc-7-2017q4.path=/home/makko/.arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4",
+  "fqbn": "gamebuino:samd:gamebuino_meta_native",
+  "hardwareFolders": "/home/makko/arduino-1.8.10/hardware,/home/makko/.arduino15/packages",
+  "otherLibrariesFolders": "/home/makko/Arduino/libraries",
+  "runtime.ide.version": "10810",
+  "sketchLocation": "/home/makko/Arduino/DiggerKC85/DiggerKC85/DiggerKC85.ino",
+  "toolsFolders": "/home/makko/arduino-1.8.10/tools-builder,/home/makko/arduino-1.8.10/hardware/tools/avr,/home/makko/.arduino15/packages"
+}
