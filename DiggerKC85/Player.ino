@@ -25,10 +25,7 @@ void handlePlayer(int8_t xoff, int8_t yoff) {
         movePlayer(xoff, yoff);
         sfx_diamond = true;
         score += 100;
-        zs_flag = true;
-        zd_flag = true;
         nextLevel();
-
       }
       break;
     default: die();

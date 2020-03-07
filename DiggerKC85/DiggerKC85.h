@@ -4,6 +4,10 @@
 #define NUM_SPRITES 33
 #define NUM_LEDMATRIX 10
 
+#define CHAR_W 8
+#define CHAR_H 8
+#define NUM_CHARS 184
+
 //sprites
 #define EMPTY 0
 #define WALL 1
