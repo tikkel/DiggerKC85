@@ -7,8 +7,8 @@ const MultiLang lang_score[]= {
                { LANG_FR, "    Score élevé" },
 };
 const MultiLang lang_highscore[]= {
-               { LANG_EN, "Highscore :" },
-               { LANG_DE, "Highscore :" },
+               { LANG_EN, "HIGHSCORE :" },
+               { LANG_DE, "HIGHSCORE :" },
                { LANG_FR, "Score élevé" },
 };
 const MultiLang lang_name[]= {

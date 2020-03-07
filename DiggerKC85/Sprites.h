@@ -1,3 +1,31 @@
+static byte iconBuffer[] = {
+  CHAR_W/2, CHAR_H,
+  2,0,  //frames
+  0,    //frameloop dis
+  0x00, //transparent color
+  1,    //1 == indexed colors
+  
+  0x99,0x99, // Herz 4x8
+  0x98,0x98,
+  0x88,0x88,
+  0x88,0x88,
+  0x98,0x89,
+  0x98,0x89,
+  0x99,0x89,
+  0x99,0x99,
+  
+  0x99,0x99, // Diamant 4x8
+  0x94,0x49,
+  0x94,0x49,
+  0x44,0x44,
+  0xaa,0xaa,
+  0x9a,0xa9,
+  0x9a,0xa9,
+  0x99,0x99
+};
+
+Image iconSet(iconBuffer);
+
 const byte ledsprite_collectBuff[]={
    2,4,  //width, height
    8,0,  //8 frames animation
@@ -34,7 +62,7 @@ Image ledsprite_falled(ledsprite_falledBuff);
 
 const byte ledsprite_collectedBuff[]={
    2,4,  //width, height
-   20,0,  //8 frames animation
+   20,0, //20 frames animation
    1,    //frameloop on
    0xff, //no transparent color
    1,    //indexed colors
@@ -78,12 +106,12 @@ const byte ledsprite_highscoreBuff[]={
 };
 Image ledsprite_highscore(ledsprite_highscoreBuff);
 
-const byte sprites[]={
+const byte sprites[] = {
   SPRITE_W, SPRITE_H,
-  NUM_SPRITES,0, //frames
-  0,  //frameloop dis
-  0xFF, //transparent color
-  1, //indexed colors
+  NUM_SPRITES,0,//frames
+  0,            //frameloop dis
+  0xFF,         //transparent color
+  1,            //1 == indexed colors
 
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,

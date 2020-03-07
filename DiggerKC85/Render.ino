@@ -114,12 +114,14 @@ void drawWorld() {
       //if ( !(x_screen < -SPRITE_W-1 || x_screen > display_width-1 || y_screen < -TOPBAR_H || y_screen > display_height-1) && (world[x][y] & RENDERSTATE)==RENDERSTATE ) {
       //no refresh
       //if ( (world[x][y] & RENDERSTATE) == RENDERSTATE ) {
-        spritesheet.setFrame(sprite);
+        
         //crop menubar
         if (y_screen < TOPBAR_H)
           crop_y = TOPBAR_H - y_screen;
         else
           crop_y = 0;
+
+        spritesheet.setFrame(sprite);
         gb.display.drawImage( x_screen, y_screen + crop_y, spritesheet, 0, crop_y, SPRITE_W, SPRITE_H );
       }
 
@@ -158,72 +160,92 @@ void drawWorld() {
     if (clr_flag) {
       clr_flag = false;
       gb.display.fill(zbg);
+      iconSet.setFrame( 0 );
+      gb.display.drawImage( 36, TOPBAR_H/4, iconSet );
+      iconSet.setFrame( 1 );
+      gb.display.drawImage( 96, TOPBAR_H/4, iconSet );
     }
 
-    gb.display.setFont(font8x8);
+    //gb.display.setFont(fontTEXT8x8);
     gb.display.setFontSize(1);
     gb.display.setTextWrap( false );
     gb.display.cursorY = TOPBAR_H/4;
+    char cstr[2];
 
     // raum
     if (zr_flag) {
       zr_flag = false;
-      gb.display.cursorX = 0;
-      gb.display.setColor(zfg, zbg);
       zr = String(curlevel + 1);
       while (zr.length() < 2)
         zr = String("0" + zr);
-      gb.display.print(zr);
+      strcpy(cstr, zr.c_str());
+      for ( int sp = 0; sp < 2; sp++ ) {
+        charSet.setFrame( int(cstr[sp]) - 32 );
+        gb.display.drawImage( sp*8, TOPBAR_H/4, charSet );
+      }
     }
   
     // leben
     if (zl_flag) {
       zl_flag = false;
-      gb.display.cursorX = 20;
-      gb.display.setColor(zfg, zbg);
       zl = String(lives);
       while (zl.length() < 2)
         zl = String("0" + zl);
-      gb.display.print(zl);
-      gb.display.cursorX = 34;
-      gb.display.setColor(INDEX_RED, zbg); //KCF_ROT
-      gb.display.print(F("\03"));          //HERZ
+      strcpy(cstr, zl.c_str());
+      for ( int sp = 0; sp < 2; sp++ ) {
+        charSet.setFrame( int(cstr[sp]) - 32 );
+        gb.display.drawImage( 20+sp*8, TOPBAR_H/4, charSet );
+      }
     }
   
     // countdown
-    gb.display.cursorX = 46;
-    gb.display.setColor(zfg, zbg);
     zc = String(countdown);
     while (zc.length() < 4)
       zc = String("0" + zc);
-    if ( (gb.frameCount % 6 == 0) && (countdown < 1000) )
-      countdown_toggle ? countdown_toggle = false : countdown_toggle = true; 
-    countdown_toggle ? gb.display.print("    ") : gb.display.print(zc);
+    if ( countdown == 0 )
+     countdown_toggle = false;
+    else
+      if ( (gb.frameCount % 6 == 0) && (countdown < 1000) )
+        countdown_toggle ? countdown_toggle = false : countdown_toggle = true;
+    strcpy(cstr, zc.c_str());
+    for ( int sp = 0; sp < 4; sp++ ) {
+      countdown_toggle ? charSet.setFrame( 0 ) : charSet.setFrame( int(cstr[sp]) - 32 );
+      gb.display.drawImage( 44+sp*8, TOPBAR_H/4, charSet );
+    }
   
     // diamanten
     if (zd_flag) {
       zd_flag = false;
-      gb.display.cursorX = 82;
       zd = String(diamonds);
       while (zd.length() < 2)
         zd = String("0" + zd);
-      gb.display.print(zd);
-      gb.display.cursorX = 96;
-      gb.display.setColor(INDEX_YELLOW, zbg); //KCF_GELB
-      gb.display.print(F("\04"));             //DIAMANT
-      gb.display.cursorX = 102;
-      gb.display.setColor(zfg, zbg);
-      gb.display.print(diams_need);
+      strcpy(cstr, zd.c_str());
+      for ( int sp = 0; sp < 2; sp++ ) {
+        charSet.setFrame( int(cstr[sp]) - 32 );
+        gb.display.drawImage( 80+sp*8, TOPBAR_H/4, charSet );
+      }
+      zd = String(diams_need);
+      while (zd.length() < 2)
+        zd = String("0" + zd);
+      strcpy(cstr, zd.c_str());
+      for ( int sp = 0; sp < 2; sp++ ) {
+        charSet.setFrame( int(cstr[sp]) - 32 );
+        gb.display.drawImage( 101+sp*8, TOPBAR_H/4, charSet );
+      }
     }
   
     // score
     if (zs_flag) {
+      char cstr[2];
       zs_flag = false;
-      gb.display.cursorX = 122;
       zs = String(score);
       while (zs.length() < 5)
         zs = String("0" + zs);
-      gb.display.print(zs);
+      strcpy(cstr, zs.c_str());
+      for ( int sp = 0; sp < 5; sp++ ) {
+        charSet.setFrame( int(cstr[sp]) - 32 );
+        gb.display.drawImage( 121+sp*8, TOPBAR_H/4, charSet );
+      }
     }
 
   }

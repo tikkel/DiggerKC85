@@ -4,9 +4,7 @@
 #include "Level.h"
 #include "Menu.h"
 #include "Sounds.h"
-#include "fontKC85.h"
-
-extern const byte font5x7[];
+#include "Charset.h"
 
 byte world[WORLD_W][WORLD_H];
 
@@ -140,12 +138,7 @@ void loop() {
         viewMenu();
         //Tasten abfragen
         //(A)Play
-        if (gb.buttons.pressed(BUTTON_A)) {
-          zr_flag = true;
-          zl_flag = true;
-          zd_flag = true;
-          zs_flag = true;
-          clr_flag = true;
+        if (gb.buttons.released(BUTTON_A)) {
           newGame();
           initWorld(curlevel);          
           gamestate = RUNNING;
@@ -217,6 +210,11 @@ void newGame() {
 
 //decoder of compressed level data
 void initWorld(byte _level) {
+  zr_flag = true;
+  zl_flag = true;
+  zd_flag = true;
+  zs_flag = true;
+  clr_flag = true;
   gb.lights.clear();
   zfg = gamemode ? INDEX_BEIGE : INDEX_BEIGE; //KCF_TUERKIS : KCF_TUERKIS
   zbg = gamemode ? INDEX_ORANGE : INDEX_ORANGE; //KCB_ROT : KCB_SCHWARZ
@@ -289,22 +287,35 @@ void nextLevel() {
 }
 
 void viewMenu() {
-  gb.display.setFont(font8x8);
   gb.display.setFontSize(1);
   gb.display.fill(INDEX_ORANGE);    //KCB_ROT
   gb.display.setColor(INDEX_BEIGE); //KCF_TUERKIS
   gb.display.setCursor(0,0);
   
-  const char *screen[]={
-    "DIGGER              ",
-    "ALEXANDER LANG      ",
-    "                    ",
-    "       STEFAN DAHLKE",
+  const char *screen[]={ //Sonderzeichen oktal codiert
+    "\234\235\235\235\235\235\235\235\235\235\235\235\235\235\235\235\235\235\235\236",
+    "\237\240\241\241\241\241\241\241\241\241\241\241\241\241\241\241\241\241\242\237",
+    "\237\243                \14\237",
+    "\237\243 \200\201\202\30\31\32\33\34\35\36\37\40\41\42 \14\237",
+    "\237\243                \14\237",
+    "\237\243                \14\237",
+    "\237\243                \14\237",
+    "\237\243                \14\237",
+    "\237\243                \14\237",
+    "\237\243                \14\237",
+    "\237\243 ALEXANDER LANG \14\237",
+    "\237\243                \14\237",
+    "\237\243  STEFAN DAHLKE \14\237",
+    "\237\243                \14\237",
+    "\237\15\16\16\16\16\16\16\16\16\16\16\16\16\16\16\16\16\17\237",
+    "\20\21\21\21\21\21\21\21\21\21\21\21\21\21\21\21\21\21\21\22",
   };
   
-  for (int ze = 0; ze < 4; ze++ )
-    for (int sp = 0; sp < 20; sp++) 
-    gb.display.drawChar(sp*8, ze*8, screen[ze][sp], 1);
+  for ( int ze = 0; ze < 16; ze++ )
+    for ( int sp = 0; sp < 20; sp++ ) {
+      charSet.setFrame( int(screen[ze][sp]) - 32 );
+      gb.display.drawImage( sp*8, ze*8, charSet );
+    }
 }
 
 void viewScore() {

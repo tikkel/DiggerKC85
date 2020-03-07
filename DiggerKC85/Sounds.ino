@@ -1,5 +1,5 @@
 /* digger sound effects
-   forked from original "XDigger" sound.c
+   inspired by "XDigger" sound.c
    found at http://zenway.ru/page/xdigger
    XDigger  Copyright (C) 1988-99 Alexander Lang
 */
