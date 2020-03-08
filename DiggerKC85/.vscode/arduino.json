@@ -1,6 +1,0 @@
-{
-    "port": "/dev/ttyACM0",
-    "board": "gamebuino:samd:gamebuino_meta_native",
-    "output": "build",
-    "sketch": "DiggerKC85.ino"
-}
