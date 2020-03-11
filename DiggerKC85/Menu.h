@@ -1,15 +1,21 @@
-//wegen Sonderzeichen
-//nur als ISO8859-15 editieren/speichern
+/*
+https://gamebuino.com/academy/standalone/create-a-multilingual-game
+https://www.htmlhelp.com/reference/charset/latin1.gif  Code-32=Char, Dezimal --> Oktal
+
+Sonderzeichen oktal:
+\133 = eÂ´
+\175 = Ã¼
+*/
 
 const MultiLang lang_score[]= {
                { LANG_EN, "     Highscore" },
                { LANG_DE, "     Highscore" },
-               { LANG_FR, "    Score élevé" },
+               { LANG_FR, "    Score \133lev\133" },
 };
 const MultiLang lang_highscore[]= {
                { LANG_EN, "HIGHSCORE :" },
                { LANG_DE, "HIGHSCORE :" },
-               { LANG_FR, "Score élevé" },
+               { LANG_FR, "Score \133lev\133" },
 };
 const MultiLang lang_name[]= {
                { LANG_EN, "your name?" },
@@ -19,7 +25,7 @@ const MultiLang lang_name[]= {
 
 const MultiLang lang_resume[]= {
                { LANG_EN, "      resume" },
-               { LANG_DE, "      zurück" },
+               { LANG_DE, "      zur\175ck" },
                { LANG_FR, "        dos" },
 };
 const MultiLang lang_new[]= {
@@ -34,8 +40,8 @@ const MultiLang lang_levelup[]= {
 };
 const MultiLang lang_leveldown[]= {
                { LANG_EN, "    Level down" },
-               { LANG_DE, "    Level zurück" },
-               { LANG_FR, "  Niveau précédent" },
+               { LANG_DE, "    Level zur\175ck" },
+               { LANG_FR, "  Niveau pr\133c\133dent" },
 };
 const MultiLang lang_toggle_easy[]= {
                { LANG_EN, "    Mode (easy)" },

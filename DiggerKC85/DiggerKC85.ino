@@ -320,14 +320,24 @@ void viewMenu() {
 }
 
 void viewScore() {
-  gb.display.fill(INDEX_LIGHTGREEN);
-  //gb.display.setFontSize(2);
-  gb.display.setColor(INDEX_YELLOW);
-  gb.display.setCursor(72, 0);
-  gb.display.print( gamemode ? lang_score_hard : lang_score_easy );
-  gb.display.setCursor(8, 12); //4,6
-  gb.display.print( lang_highscore );
-  gb.display.fillRect(8 , 24, 88, 6);
+  char cstr[2];
+  
+  gb.display.fill( INDEX_ORANGE );
+  
+  hs = gb.language.get( lang_highscore );
+  strcpy(cstr, hs.c_str());
+  for ( int sp = 0; sp < hs.length(); sp++ ) {
+    charSet.setFrame( int(cstr[sp]) - 32 );
+    gb.display.drawImage( 8+sp*8, TOPBAR_H, charSet );
+  }
+  
+  hs = String( "\135\135\135\135\135\135\135\135\135\135\135" );
+  strcpy(cstr, hs.c_str());
+  for ( int sp = 0; sp < hs.length(); sp++ ) {
+    charSet.setFrame( int(cstr[sp]) - 32 );
+    gb.display.drawImage( 8+sp*8, TOPBAR_H+8, charSet );
+  }
+  
     for (byte i = 0; i < 7; i++) {
       gb.display.setCursor(16, 36 + (i * 12));
       //score

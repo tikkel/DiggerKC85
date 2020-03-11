@@ -236,7 +236,6 @@ void drawWorld() {
   
     // score
     if (zs_flag) {
-      char cstr[2];
       zs_flag = false;
       zs = String(score);
       while (zs.length() < 5)
