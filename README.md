@@ -2,7 +2,7 @@
 
 # DiggerKC85
 ## Port of an old <a href="http://lanale.de/">KC85-game</a> for <a href="https://gamebuino.com/gamebuino-meta">Gamebuino-META</a><br>
-(fork from the orig. programmed <a href="https://github.com/scmar/DiggerMETA">scmar/DiggerMETA</a>)
+### see also <a href="https://gamebuino.com/creations/wip-diggermeta">Gamebuino forum thread</a>
 <br><br>
 <img src="./Etc/titlescreen.gif"/>
 <br><br>
@@ -15,4 +15,3 @@
 <img src="./Etc/animation-diamonds.gif"/><br>
 <br><br>
 <img src="./Etc/highscore.png"/><br>
-See <a href="https://gamebuino.com/creations/wip-diggermeta">Gamebuino forum thread</a>
