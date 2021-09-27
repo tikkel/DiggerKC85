@@ -1,4 +1,4 @@
-[![Build DiggerKC85](https://github.com/tikkel/DiggerKC85/actions/workflows/build_DiggerKC85.yml/badge.svg)](https://github.com/tikkel/DiggerKC85/actions/workflows/build_DiggerKC85.yml)
+[![Build DiggerKC85](https://github.com/tikkel/DiggerKC85/actions/workflows/build_DiggerKC85.yml/badge.svg)](https://github.com/tikkel/DiggerKC85/actions/workflows/build_DiggerKC85.yml) [![Build scroll-demo](https://github.com/tikkel/DiggerKC85/actions/workflows/build_scroll-demo.yml/badge.svg)](https://github.com/tikkel/DiggerKC85/actions/workflows/build_scroll-demo.yml)
 
 # DiggerKC85
 ## Port of an old <a href="http://lanale.de/">KC85-game</a> for <a href="https://gamebuino.com/gamebuino-meta">Gamebuino-META</a><br>
