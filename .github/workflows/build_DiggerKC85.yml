@@ -1,0 +1,29 @@
+# build_DiggerKC85.yml
+
+name: Build DiggerKC85
+on: [push, pull_request]
+jobs:
+  build:
+    name: Test building of DiggerKC85 for the Gamebuino META
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      
+    - name: Building 
+      uses: arduino/compile-sketches@v1
+      with:
+        fqbn: 'gamebuino:samd:gamebuino_meta_native'
+        platforms: |
+          # Arduino SAMD
+          - name: "arduino:samd"
+          # Gamebuino META
+          - source-url: "https://gamebuino.com/sdk/gamebuino-meta-board-1.2.2.zip"
+            name: "gamebuino:samd"
+        libraries: |
+          - source-url: https://github.com/Gamebuino/Gamebuino-META/archive/refs/heads/master.zip
+            destination-name: "Gamebuino META"
+        sketch-paths: |
+          - DiggerKC85
+        verbose: true
