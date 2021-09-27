@@ -288,8 +288,8 @@ void nextLevel() {
 
 void viewMenu() {
   gb.display.setFontSize(1);
-  gb.display.fill(INDEX_ORANGE);    //KCB_ROT
-  gb.display.setColor(INDEX_BEIGE); //KCF_TUERKIS
+  gb.display.fill(INDEX_BLUE);      //KCB_BLAU
+  gb.display.setColor(INDEX_WHITE); //KCF_WEISS
   gb.display.setCursor(0,0);
   
   const char *screen[]={ //Sonderzeichen oktal codiert
@@ -322,7 +322,8 @@ void viewMenu() {
 void viewScore() {
   char cstr[2];
   
-  gb.display.fill( INDEX_ORANGE );
+  gb.display.fill( INDEX_BEIGE ); // KCF_TUERKIS
+  //gb.display.setColor(INDEX_YELLOW); //KCF_GELB
   
   hs = gb.language.get( lang_highscore );
   strcpy(cstr, hs.c_str());

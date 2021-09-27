@@ -23,8 +23,8 @@ static byte iconBuffer[] = {
   0x9a,0xa9,
   0x99,0x99
 };
-
 Image iconSet(iconBuffer);
+
 
 const byte ledsprite_collectBuff[]={
    2,4,  //width, height
@@ -43,6 +43,7 @@ const byte ledsprite_collectBuff[]={
 };
 Image ledsprite_collect(ledsprite_collectBuff);
 
+
 const byte ledsprite_falledBuff[]={
    2,4,  //width, height
    8,0,  //8 frames animation
@@ -59,6 +60,7 @@ const byte ledsprite_falledBuff[]={
    0x03, 0x00, 0x00, 0x00,
 };
 Image ledsprite_falled(ledsprite_falledBuff);
+
 
 const byte ledsprite_collectedBuff[]={
    2,4,  //width, height
@@ -89,6 +91,7 @@ const byte ledsprite_collectedBuff[]={
 };
 Image ledsprite_collected(ledsprite_collectedBuff);
 
+
 const byte ledsprite_highscoreBuff[]={
    2,4,  //width, height
    8,0,  //8 frames animation
@@ -105,6 +108,7 @@ const byte ledsprite_highscoreBuff[]={
    0x00, 0xb0, 0x00, 0x00,
 };
 Image ledsprite_highscore(ledsprite_highscoreBuff);
+
 
 const byte sprites[] = {
   SPRITE_W, SPRITE_H,
