@@ -322,7 +322,7 @@ void viewMenu() {
 void viewScore() {
   char cstr[2];
   
-  gb.display.fill( INDEX_BEIGE ); // KCF_TUERKIS
+  gb.display.fill( INDEX_BEIGE );     //KCF_TUERKIS
   //gb.display.setColor(INDEX_YELLOW); //KCF_GELB
   
   hs = gb.language.get( lang_highscore );
